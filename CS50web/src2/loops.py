@@ -4,3 +4,6 @@ for i in range(5):
 names = ["Alice", "Bob", "Charlie"]
 for name in names:
     print(name)
+
+for character in names[0]:
+    print(character)

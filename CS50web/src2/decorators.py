@@ -1,12 +1,12 @@
 def announce(f):
     def wrapper():
-        print("About to run the function...")
+        print("    About to run the function...")
         f()
-        print("Done running the function.")
+        print("    Done running the function.")
     return wrapper
 
 
-@announce
+@announce # add announce decorator to this function
 def hello():
     print("Hello, world!")
 

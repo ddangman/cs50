@@ -5,8 +5,10 @@ class Flight:
         self.passengers = []
 
     def add_passenger(self, name):
+        # if self.open_seats() == 0
         if not self.open_seats():
             return False
+        # else self.open_seats != 0
         self.passengers.append(name)
         return True
 

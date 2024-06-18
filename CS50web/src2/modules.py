@@ -1,3 +1,3 @@
-from functions import square
+from my_functions import square
 
 print(square(10))

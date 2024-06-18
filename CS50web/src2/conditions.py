@@ -1,8 +1,21 @@
-x = 10
+n = input("Number: ")
 
-if x > 0:
-    print("x is positive")
-elif x < 0:
-    print("x is negative")
+def is_float(value):
+  if value is None:
+      return False
+  try:
+      float(value)
+      return True
+  except:
+      return False
+
+if is_float(n):
+    n = float(n)
+    if n > 0:
+        print("n is positive")
+    elif n < 0:
+        print("n is negative")
+    else:
+        print("n is 0")
 else:
-    print("x is 0")
+    print("n is not a number")
