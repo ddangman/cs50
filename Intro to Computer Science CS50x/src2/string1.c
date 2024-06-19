@@ -8,6 +8,7 @@ int main(void)
 {
     string s = get_string("Input:  ");
     printf("Output: ");
+    // we can have more code separated by ; in for loop
     for (int i = 0, n = strlen(s); i < n; i++)
     {
         printf("%c", s[i]);

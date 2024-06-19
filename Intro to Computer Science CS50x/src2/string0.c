@@ -1,6 +1,6 @@
 // Prints string char by char, using strlen
 
-#include <cs50.h>
+#include "cs50.c"
 #include <stdio.h>
 #include <string.h>
 
