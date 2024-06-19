@@ -1,6 +1,7 @@
 // Division with longs, demonstrating double
+// x=1, y=3 will be 0.33333333333333331483
 
-#include <cs50.h>
+#include "cs50.c"
 #include <stdio.h>
 
 int main(void)

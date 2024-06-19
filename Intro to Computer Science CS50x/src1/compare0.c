@@ -1,6 +1,6 @@
 // Conditional, Boolean expression, relational operator
 
-#include <cs50.h>
+#include "cs50.c"
 #include <stdio.h>
 
 int main(void)

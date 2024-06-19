@@ -2,6 +2,7 @@
 
 #include <stdio.h>
 
+// declare meow function prototype
 void meow(int n);
 
 int main(void)

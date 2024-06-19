@@ -1,6 +1,7 @@
 // Floating-point imprecision
+// x=1, y=3 will be 0.33333334326744079590
 
-#include <cs50.h>
+#include "cs50.c"
 #include <stdio.h>
 
 int main(void)
