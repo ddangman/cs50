@@ -4,8 +4,8 @@
 
 int main(void)
 {
-    int n;
+    int n; // integer value
     printf("n: ");
-    scanf("%i", &n);
+    scanf("%i", &n); // pass by reference address
     printf("n: %i\n", n);
 }

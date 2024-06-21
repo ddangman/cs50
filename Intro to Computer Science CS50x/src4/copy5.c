@@ -10,16 +10,17 @@ int main(void)
 {
     // Get a string
     char *s = get_string("s: ");
-    if (s == NULL)
+
+    if (s == NULL) // check if sufficient memory available
     {
-        return 1;
+        return 1; // abort program given insufficient memory
     }
 
     // Allocate memory for another string
     char *t = malloc(strlen(s) + 1);
-    if (t == NULL)
+    if (t == NULL) // check if sufficient memory available
     {
-        return 1;
+        return 1; // abort program given insufficient memory
     }
 
     // Copy string into memory

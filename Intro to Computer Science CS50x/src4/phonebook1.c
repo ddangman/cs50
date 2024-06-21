@@ -8,9 +8,9 @@ int main(void)
 {
     // Open CSV file
     FILE *file = fopen("phonebook.csv", "a");
-    if (!file)
+    if (!file) // check for NULL pointer
     {
-        return 1;
+        return 1; // exit if NULL pointer
     }
 
     // Get name and number

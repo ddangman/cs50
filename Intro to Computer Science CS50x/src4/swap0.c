@@ -14,8 +14,10 @@ int main(void)
     printf("x is %i, y is %i\n", x, y);
 }
 
+// make copies of (x,y) values
 void swap(int a, int b)
 {
+    // swap copies
     int tmp = a;
     a = b;
     b = tmp;

@@ -4,8 +4,9 @@
 
 int main(void)
 {
-    char *s;
+    char *s; // address of 1st char in String. Uninitialized
     printf("s: ");
-    scanf("%s", s);
+    scanf("%s", s); // char* is already an address reference
     printf("s: %s\n", s);
 }
+// Segmentation fault (core dumped)

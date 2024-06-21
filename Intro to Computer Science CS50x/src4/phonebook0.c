@@ -6,8 +6,9 @@
 
 int main(void)
 {
-    // Open CSV file
+    // Open CSV file in memory for "a"ppending, return pointer
     FILE *file = fopen("phonebook.csv", "a");
+    // any function that returns a pointer should be checked for NULL
 
     // Get name and number
     char *name = get_string("Name: ");

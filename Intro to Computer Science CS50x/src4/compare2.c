@@ -1,14 +1,14 @@
 // Compares two strings using strcmp
 
-#include <cs50.h>
+#include "cs50.c"
 #include <stdio.h>
 #include <string.h>
 
 int main(void)
 {
     // Get two strings
-    char *s = get_string("s: ");
-    char *t = get_string("t: ");
+    char *s = get_string("","s: ");
+    char *t = get_string("","t: ");
 
     // Compare strings
     if (strcmp(s, t) == 0)
