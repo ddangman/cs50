@@ -1,6 +1,7 @@
 // Implements a list of numbers using a linked list
+// append to end
 
-#include <cs50.h>
+#include "cs50.c"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -47,7 +48,7 @@ int main(int argc, char *argv[])
                 // If at end of list
                 if (ptr->next == NULL)
                 {
-                    // Append node
+                    // Append node to end of linked-list
                     ptr->next = n;
                     break;
                 }

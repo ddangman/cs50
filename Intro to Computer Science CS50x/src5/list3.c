@@ -1,6 +1,6 @@
-// Prepends numbers to a linked list, using while loop to print
+// Prepends numbers to start of linked list, using while loop to print
 
-#include <cs50.h>
+#include "cs50.c"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -20,16 +20,18 @@ int main(int argc, char *argv[])
     for (int i = 1; i < argc; i++)
     {
         // Convert argument to int
-        int number = atoi(argv[i]);
+        int number = atoi(argv[i]); // ASCII to Integer
 
         // Allocate node for number
-        node *n = malloc(sizeof(node));
-        if (n == NULL)
+        node *n = malloc(sizeof(node)); // n only exist in this scope. no need to free
+        if (n == NULL) // check NULL pointer
         {
-            return 1;
+            // if memory is allocated, free it here
+            return 1; // exit not successful
         }
         n->number = number;
-        n->next = NULL;
+        // not necessary since node.next will point to list, whose end is already NULL
+        //n->next = NULL; 
 
         // Prepend node to list
         n->next = list;
@@ -53,3 +55,4 @@ int main(int argc, char *argv[])
         ptr = next;
     }
 }
+// ./list3 1 2 3

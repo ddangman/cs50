@@ -7,9 +7,9 @@ int main(void)
 {
     // List of size 3
     int *list = malloc(3 * sizeof(int));
-    if (list == NULL)
+    if (list == NULL) // check for NULL pointer
     {
-        return 1;
+        return 1; // abort program
     }
 
     // Initialize list of size 3 with numbers
@@ -17,11 +17,12 @@ int main(void)
     list[1] = 2;
     list[2] = 3;
 
+    // if we need a bigger list...
     // List of size 4
     int *tmp = malloc(4 * sizeof(int));
-    if (tmp == NULL)
+    if (tmp == NULL) // if malloc returns NULL, there is nothing to free
     {
-        free(list);
+        free(list); // free list memory of successful malloc
         return 1;
     }
 
@@ -35,10 +36,10 @@ int main(void)
     tmp[3] = 4;
 
     // Free list of size 3
-    free(list);
+    free(list); // list is still there, but effectively garbage
 
     // Remember list of size 4
-    list = tmp;
+    list = tmp; // list now points to temp
 
     // Print list
     for (int i = 0; i < 4; i++)
