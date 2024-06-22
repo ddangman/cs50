@@ -13,6 +13,6 @@ name = get_string("Name: ")
 for person in people:
     if person["name"] == name:
         print(f"Found {person['number']}")
-        break
+        break # necessary within for loop
 else:
     print("Not found")

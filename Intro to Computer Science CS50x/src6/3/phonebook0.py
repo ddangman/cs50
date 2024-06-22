@@ -11,5 +11,5 @@ for n in names:
     if name == n:
         print("Found")
         break
-else:
+else: # runs if entire for loop never break
     print("Not found")

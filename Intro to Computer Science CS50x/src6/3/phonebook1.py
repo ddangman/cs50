@@ -6,7 +6,7 @@ names = ["Carter", "David", "John"]
 # Ask for name
 name = input("Name: ")
 
-# Search for name
+# Python linear search
 if name in names:
     print("Found")
 else:

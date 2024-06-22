@@ -9,6 +9,7 @@ people = {
 }
 
 # Search for name
+# using Python handles break
 name = get_string("Name: ")
 if name in people:
     print(f"Number: {people[name]}")

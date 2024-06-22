@@ -8,4 +8,4 @@ y = int(input("y: "))
 
 # Divide x by y
 z = x / y
-print(f"{z:.50f}")
+print(f"{z:.50f}") # print 50 decimals

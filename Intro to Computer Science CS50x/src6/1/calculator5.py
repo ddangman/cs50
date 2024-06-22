@@ -1,11 +1,12 @@
 # Implements get_int with a loop
 
 def get_int(prompt):
-    while True:
+    while True: # forever loop until user inputs integer
         try:
-            return int(input(prompt))
+            return int(input(prompt)) # exit forever loop
         except ValueError:
             print("Not an integer")
+            # pass
 
 
 def main():
