@@ -1,4 +1,4 @@
-"""lecture3 URL Configuration
+"""lecture3 URL Configuration for entire project
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.2/topics/http/urls/
@@ -18,6 +18,8 @@ from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # must add paths to custom apps
+    # and include their urls
     path("hello/", include("hello.urls")),
     path("tasks/", include("tasks.urls")),
     path("newyear/", include("newyear.urls")),

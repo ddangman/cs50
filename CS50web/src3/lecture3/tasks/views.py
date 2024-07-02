@@ -11,6 +11,7 @@ class NewTaskForm(forms.Form):
 def index(request):
     if "tasks" not in request.session:
         request.session["tasks"] = []
+    # use subdirectory since many /index.html can exist
     return render(request, "tasks/index.html", {
         "tasks": request.session["tasks"]
     })
@@ -21,6 +22,8 @@ def add(request):
         if form.is_valid():
             task = form.cleaned_data["task"]
             request.session["tasks"] += [task]
+            # instead of redirecting to hardcoded /tasks, 
+            # dynamically redirect to route by reverse engineering
             return HttpResponseRedirect(reverse("tasks:index"))
         else:
             return render(request, "tasks/add.html", {

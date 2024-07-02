@@ -1,3 +1,8 @@
+"""
+This file is entirely responsible for deciding what template should be rendered on this particular view
+and what information should be passed in this context
+"""
+
 from django.http import HttpResponse
 from django.shortcuts import render
 
