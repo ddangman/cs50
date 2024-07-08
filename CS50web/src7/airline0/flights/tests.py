@@ -8,11 +8,11 @@ class FlightTestCase(TestCase):
 
     def setUp(self):
 
-        # Create airports.
+        # Create dummy airports.
         a1 = Airport.objects.create(code="AAA", city="City A")
         a2 = Airport.objects.create(code="BBB", city="City B")
 
-        # Create flights.
+        # Create dummy flights.
         Flight.objects.create(origin=a1, destination=a2, duration=100)
         Flight.objects.create(origin=a1, destination=a1, duration=200)
         Flight.objects.create(origin=a1, destination=a2, duration=-100)
@@ -41,6 +41,14 @@ class FlightTestCase(TestCase):
         a2 = Airport.objects.get(code="BBB")
         f = Flight.objects.get(origin=a1, destination=a2, duration=-100)
         self.assertFalse(f.is_valid_flight())
+
+    # since 'or' should be 'and', this method will fail with the following error:
+    # AssertionError: True is not false
+    def test_invalid_flight_duration(self):
+        a1 = Airport.objects.get(code="AAA")
+        a2 = Airport.objects.get(code="BBB")
+        f = Flight.objects.get(origin=a1, destination=a2, duration=-100)
+        self.assertFalse(f.is_valid_flight_or())
 
     def test_index(self):
         c = Client()
@@ -82,3 +90,5 @@ class FlightTestCase(TestCase):
         response = c.get(f"/flights/{f.id}")
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.context["non_passengers"].count(), 1)
+
+# python manage.py test
