@@ -226,29 +226,32 @@ class Biconditional(Sentence):
 
 
 def model_check(knowledge, query):
-    """Checks if knowledge base entails query."""
+    """Checks if knowledge base entails query, given a particular model."""
 
     def check_all(knowledge, query, symbols, model):
-        """Checks if knowledge base entails query, given a particular model."""
+        """Brute force all possible symbols in both knowledge and query."""
 
         # If model has an assignment for each symbol
+        # (base case), check if knowledge entails query
         if not symbols:
-
-            # If knowledge base is true in model, then query must also be true
+            # If knowledge base is true in model, then return true only if query is true
+            # if knowledge is true, then query must be true in order for there to be entailment
             if knowledge.evaluate(model):
                 return query.evaluate(model)
+            # else knowledge is false, so return vacuously true
             return True
-        else:
-
+        
+        # model does not have an assignment for each symbol
+        else: 
             # Choose one of the remaining unused symbols
             remaining = symbols.copy()
             p = remaining.pop()
 
-            # Create a model where the symbol is true
+            # Create a model where the popped symbol is true
             model_true = model.copy()
             model_true[p] = True
 
-            # Create a model where the symbol is false
+            # Create a model where the popped symbol is false
             model_false = model.copy()
             model_false[p] = False
 
@@ -259,5 +262,5 @@ def model_check(knowledge, query):
     # Get all symbols in both knowledge and query
     symbols = set.union(knowledge.symbols(), query.symbols())
 
-    # Check that knowledge entails query
+    # Recursively check that knowledge entails query
     return check_all(knowledge, query, symbols, dict())
