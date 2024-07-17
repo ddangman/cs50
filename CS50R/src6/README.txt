@@ -1,0 +1,10 @@
+average/average{1,2,3,4,5,6}.R
+average/test-average{1,2,3,4}.R
+average/average7.R
+average/test-average{5,6}.R
+imprecision/imprecision.R
+average/test-average7.R
+greet/test-greet1.R
+greet/greet1.R
+greet/test-greet{2,3}.R
+greet/greet2.R

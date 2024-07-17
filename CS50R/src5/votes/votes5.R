@@ -1,0 +1,8 @@
+library(ggplot2)
+# Adjust y scale
+
+votes <- read.csv("votes.csv")
+
+ggplot(votes, aes(x = candidate, y = votes)) +
+  geom_col() +
+  scale_y_continuous(limits = c(0, 250))

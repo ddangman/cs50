@@ -1,0 +1,20 @@
+# Demonstrates interactive program to view data by feed type
+
+# Read and clean data
+chicks <- read.csv("chicks.csv")
+chicks <- subset(chicks, !is.na(weight))
+
+# Determine feed options
+feed_options <- unique(chicks$feed)
+
+# Format feed options
+formatted_options <- paste0(1:length(feed_options), ". ", feed_options)
+
+# Prompt user with options
+cat(formatted_options, sep = "\n")
+feed_choice <- as.integer(readline("Feed type: "))
+
+# Print selected option
+user_selected_feed <- feed_options[feed_choice]
+user_subset <- subset(chicks, feed == user_selected_feed)
+print(user_subset)

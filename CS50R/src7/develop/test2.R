@@ -1,0 +1,3 @@
+# Demonstrates running tests
+
+test()
